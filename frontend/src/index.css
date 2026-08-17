@@ -1,36 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
-  /* Light Mode Variables */
-  --bg-color: #f3f4f6;
-  --surface-color: #ffffff;
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --border-color: #e5e7eb;
-  --error-color: #ef4444;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --transition-speed: 0.3s;
-}
-
-[data-theme='dark'] {
-  /* Dark Mode Variables */
-  --bg-color: #111827;
-  --surface-color: #1f2937;
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --primary-color: #6366f1;
-  --primary-hover: #4f46e5;
-  --border-color: #374151;
+  /* Cinematic Dark Theme Variables */
+  --bg-color: #050505;
+  --surface-color: #111111;
+  --surface-hover: #1a1a1a;
+  --text-primary: #fafafa;
+  --text-secondary: #a7a6a6;
+  --primary-color: #ffffff;
+  --primary-hover: #e0e0e0;
+  --primary-ink: #050505;
+  --border-color: #333333;
   --error-color: #f87171;
+  
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+  
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+  
+  --transition-speed: 0.3s;
 }
 
 * {
@@ -40,10 +31,12 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,12 +44,12 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--text-secondary);
   transition: color var(--transition-speed) ease;
 }
 
 a:hover {
-  color: var(--primary-hover);
+  color: var(--text-primary);
 }
 
 /* Utilities */
@@ -64,7 +57,7 @@ a:hover {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .flex-center {
@@ -78,43 +71,28 @@ a:hover {
 }
 
 .glass-panel {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-color);
+  background-color: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  padding: 2rem;
-  transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  padding: 3rem;
 }
 
-.text-center {
-  text-align: center;
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-/* Form Styles */
 .form-group {
   margin-bottom: 1.25rem;
   display: flex;
@@ -122,14 +100,15 @@ a:hover {
 }
 
 .form-label {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: var(--text-secondary);
+  letter-spacing: 0.02em;
 }
 
 .error-text {
   color: var(--error-color);
   font-size: 0.75rem;
-  margin-top: 0.25rem;
+  margin-top: 0.4rem;
 }
