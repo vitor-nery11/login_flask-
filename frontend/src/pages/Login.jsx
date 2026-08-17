@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import api from '../services/api';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,16 +14,21 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
-    // Mocking API call for now
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const response = await api.post('/login', formData);
+      // Save token to localStorage
+      localStorage.setItem('token', response.data.token);
       navigate('/dashboard');
-    }, 1000);
+    } catch (err) {
+      setError(err.response?.data?.error || 'Login failed. Please check your credentials.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

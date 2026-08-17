@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import api from '../services/api';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,20 +13,26 @@ const Register = () => {
     password: '' 
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError('');
 
-    // Mock API call
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      await api.post('/register', formData);
+      // If success, navigate to login
       navigate('/login');
-    }, 1000);
+    } catch (err) {
+      setError(err.response?.data?.error || 'Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -60,6 +67,12 @@ const Register = () => {
           <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', fontWeight: 300, letterSpacing: '-0.03em' }}>Create Account</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Join the next layer of intelligence</p>
         </div>
+        
+        {error && (
+          <div style={{ backgroundColor: 'rgba(248, 113, 113, 0.1)', border: '1px solid rgba(248, 113, 113, 0.2)', color: 'var(--error-color)', padding: '0.75rem', borderRadius: 'var(--radius-md)', marginBottom: '1.5rem', fontSize: '0.85rem', textAlign: 'center' }}>
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div style={{ display: 'flex', gap: '1.25rem' }}>
@@ -100,6 +113,7 @@ const Register = () => {
             onChange={handleChange}
             placeholder="••••••••"
             required
+            minLength={6}
           />
           
           <div className="mt-8">
