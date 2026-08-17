@@ -101,18 +101,18 @@ const Landing = () => {
 
         <main className="hero">
           <h1 className="headline">
-            <span>The Next Layer</span> <span>of Intelligence</span>
+            <span>The Next Layer</span> <span>of Authentication</span>
           </h1>
           <p className="sub">
-            <span>A unified infrastructure platform to help teams build,</span>
-            <span>ship, and scale AI systems with confidence.</span>
+            <span>A secure, scalable, and seamless login infrastructure</span>
+            <span>built with React and Flask.</span>
           </p>
           <div className="actions">
             <Link to="/login" className="pill pill-cta">
-              <span>Get Started</span>
+              <span>Sign In</span>
             </Link>
             <Link to="/register" className="ghost">
-              View Architecture
+              Create Account
             </Link>
           </div>
         </main>
@@ -126,21 +126,21 @@ const Landing = () => {
               </mask>
               <path d="M15 31 C6.7 31 0 24.3 0 16 C0 7.7 6.7 1 15 1 C23.3 1 30 7.7 30 16 C30 24.3 23.3 31 15 31 Z" fill="currentColor" mask="url(#biteMask)" />
             </svg>
-            <span className="wordmark">logoipsum</span>
+            <span className="wordmark">React</span>
           </div>
           <div className="lg lg2">
             <svg viewBox="0 0 25 30" width="100%" height="100%">
               <rect x="0" y="0" width="8" height="30" fill="currentColor" />
               <path d="M25 15 C25 23.3 18.3 30 10 30 L10 0 C18.3 0 25 6.7 25 15 Z" fill="currentColor" />
             </svg>
-            <span className="wordmark">logoipsum<span className="dot"></span></span>
+            <span className="wordmark">Flask<span className="dot"></span></span>
           </div>
           <div className="lg lg3">
             <svg viewBox="0 0 28 28" width="100%" height="100%">
               <circle cx="14" cy="14" r="12.35" stroke="currentColor" strokeWidth="3.1" fill="none" />
               <path d="M14 1.65 C7.2 1.65 1.65 7.2 1.65 14 C1.65 18 3.5 21 6 23 C9 25.5 14 26.35 14 26.35 C14 26.35 16 19 14 14 C12 9 14 1.65 14 1.65 Z" fill="currentColor" />
             </svg>
-            <span className="wordmark">logoipsum</span>
+            <span className="wordmark">SQLite</span>
           </div>
           <div className="lg lg4">
             <svg viewBox="0 0 28 25.5" width="100%" height="100%">
@@ -148,7 +148,7 @@ const Landing = () => {
               <path d="M0 6 C4 2 8 2 14 6 C20 10 24 10 28 6" stroke="currentColor" strokeWidth="3.05" fill="none" />
               <path d="M0 0 C4 -4 8 -4 14 0 C20 4 24 4 28 0" stroke="currentColor" strokeWidth="3.05" fill="none" />
             </svg>
-            <span className="wordmark">logoipsum</span>
+            <span className="wordmark">Vite</span>
           </div>
         </div>
       </div>
