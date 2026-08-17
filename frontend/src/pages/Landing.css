@@ -360,8 +360,22 @@
     background: linear-gradient(to right, rgba(5,5,5,.9) 0%, rgba(5,5,5,.7) 42%, rgba(5,5,5,.3) 78%, rgba(5,5,5,.1) 100%);
   }
   
+  .brand {
+    left: 1.5rem !important;
+    top: 1.5rem !important;
+  }
+  
+  .brand svg {
+    width: 28px !important;
+    height: 42px !important;
+  }
+  
   .links, .pill-nav { display: none; }
-  .burger { display: flex; }
+  .burger { 
+    display: flex; 
+    right: 1.5rem !important;
+    top: 1.5rem !important;
+  }
   
   .landing-wrapper.is-open .burger i:nth-child(1) { transform: translateY(calc(4.3 * var(--m))) rotate(45deg); }
   .landing-wrapper.is-open .burger i:nth-child(2) { transform: translateY(calc(-4.3 * var(--m))) rotate(-45deg); }
