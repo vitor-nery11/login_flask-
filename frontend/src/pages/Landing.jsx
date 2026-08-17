@@ -65,10 +65,10 @@ const Landing = () => {
             </svg>
           </Link>
           <nav className="links" aria-label="Primary">
-            <Link to="/about">About</Link>
-            <Link to="/features">Features</Link>
-            <Link to="/faq">FAQ</Link>
-            <Link to="/contact">Contact</Link>
+            <a href="#" onClick={(e) => e.preventDefault()}>About</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Features</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>FAQ</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Contact</a>
           </nav>
           <Link to="/login" className="pill pill-nav">
             <span>Get Started</span>
@@ -83,10 +83,10 @@ const Landing = () => {
           <div className="menu-inner">
             <p className="menu-eyebrow">Menu</p>
             <ul className="menu-list">
-              <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-              <li><Link to="/features" onClick={closeMenu}>Features</Link></li>
-              <li><Link to="/faq" onClick={closeMenu}>FAQ</Link></li>
-              <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); closeMenu(); }}>About</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); closeMenu(); }}>Features</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); closeMenu(); }}>FAQ</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); closeMenu(); }}>Contact</a></li>
             </ul>
             <div className="menu-foot">
               <Link to="/login" className="pill pill-cta" onClick={closeMenu}>
