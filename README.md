@@ -3,6 +3,10 @@
 ## Sobre o projeto
 Este é um sistema completo (Fullstack) de login e registro, apresentando uma **Landing Page Cinematográfica Premium**, fluxos robustos de autenticação, e um painel do usuário. O projeto serve como infraestrutura base para iniciar novos sistemas seguros utilizando JWT (JSON Web Tokens).
 
+### Telas do Projeto
+![Página Inicial](<docs/Captura de Tela (217).png>)
+![Tela de Autenticação](<docs/Captura de Tela (218).png>)
+
 ## Funcionalidades
 - Landing Page minimalista, elegante e 100% responsiva (Dark Mode).
 - Criação de novos usuários com dados salvos de forma permanente.
