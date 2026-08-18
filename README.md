@@ -1,9 +1,9 @@
-# 🔐 Sistema de Autenticação React + Flask
+# Sistema de Autenticação React + Flask
 
-## 📋 Sobre o projeto
+## Sobre o projeto
 Este é um sistema completo (Fullstack) de login e registro, apresentando uma **Landing Page Cinematográfica Premium**, fluxos robustos de autenticação, e um painel do usuário. O projeto serve como infraestrutura base para iniciar novos sistemas seguros utilizando JWT (JSON Web Tokens).
 
-## 🚀 Funcionalidades
+## Funcionalidades
 - Landing Page minimalista, elegante e 100% responsiva (Dark Mode).
 - Criação de novos usuários com dados salvos de forma permanente.
 - Segurança no armazenamento de senhas utilizando hash (Werkzeug).
@@ -11,7 +11,7 @@ Este é um sistema completo (Fullstack) de login e registro, apresentando uma **
 - Rotas front-end protegidas (Dashboard e Perfil), acessíveis apenas por usuários logados.
 - UI/UX polida utilizando efeito Glassmorphism e tipografia moderna (Manrope).
 
-## 🛠️ Tecnologias
+## Tecnologias
 **Frontend:**
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
@@ -27,7 +27,7 @@ Este é um sistema completo (Fullstack) de login e registro, apresentando uma **
 - SQLite (Banco de dados)
 - [Werkzeug](https://werkzeug.palletsprojects.com/) (Segurança)
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 ```text
 login_flask/
 │
@@ -52,12 +52,12 @@ login_flask/
 └── README.md
 ```
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 Antes de começar, certifique-se de ter instalado em sua máquina:
 - [Node.js](https://nodejs.org/en/) (v16 ou superior)
 - [Python](https://www.python.org/downloads/) (v3.10 ou superior)
 
-## 📦 Instalação
+## Instalação
 
 ### 1. Clonando o repositório
 ```bash
@@ -87,7 +87,7 @@ cd frontend
 npm install
 ```
 
-## ▶️ Como executar
+## Como executar
 
 Você precisará rodar os dois servidores simultaneamente (em terminais separados).
 
@@ -106,7 +106,7 @@ npm run dev
 
 Acesse a aplicação no navegador através de: `http://localhost:5173`
 
-## 📡 Rotas da API
+## Rotas da API
 
 ### POST /api/auth/register
 Registra um novo usuário no sistema.
@@ -120,7 +120,7 @@ Efetua o login e retorna o Token JWT.
 Retorna os dados do usuário logado (Requer Token no Header).
 - **Header Opcional**: `Authorization: Bearer <seu-jwt-aqui>`
 
-## 📝 Exemplos de requisições
+## Exemplos de requisições
 
 Exemplo de requisição de **Login** via Fetch/Axios (No Javascript):
 ```javascript
@@ -133,10 +133,10 @@ const response = await axios.post('http://localhost:5000/api/auth/login', {
 console.log(response.data.token);
 ```
 
-## 🧪 Testes
+## Testes
 Os testes da interface podem ser feitos rodando o projeto manualmente. Para verificar o banco de dados do Backend:
 1. Abra o arquivo `backend/app.db` usando um visualizador como o "DB Browser for SQLite".
 2. Você poderá visualizar a tabela `users` com as senhas já protegidas (hasheadas).
 
-## 👨💻 Autor
+## Autor
 Vitor Nery
